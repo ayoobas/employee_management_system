@@ -1,0 +1,48 @@
+{% extends "emp/base.html" %}
+
+{% block content %}
+<h4 class="text-center">Update Employee Details</h4>
+
+
+<div class = " row ">
+    <div class="col-lg-3 col-sm-6"></div>
+    <div class="col-lg-6 col-sm-6 card p-5 fw-semibold">
+    <form action ="/doupdateemployee/{{singleemp.id}}/" method = "POST">
+        {% csrf_token %}
+        <div class="mb-1">
+          <label for="exampleInputEmail1" class="form-label">Employee Id<span style="color: red">*</span></label>
+          <input type="text" class="form-control" id="exampleInput" placeholder ="Enter Id" 
+          name ="employeeid" value ="{{singleemp.employeeid}}" readonly>
+    
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Name <span style="color: red">*</span></label>
+          <input type="text" class="form-control" id="exampleInput2" required = required
+          name ="name" value ="{{singleemp.name}}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Email <span style="color: red">*</span></label>
+            <input type="email" class="form-control" id="exampleInput2"  required = required
+            name ="email"  value ="{{singleemp.email}}" >
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Address <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="exampleInput2"  name ="address" required = required
+            value ="{{singleemp.address}}">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Phone Number <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="exampleInput2"  name="phone" required = required  value ="{{singleemp.phone}}">
+          </div>
+    <div class ="container text-center mt-2">
+        <button type="submit" class="btn  btn-sm btn-outline-success ">Update Employee</button>
+        </div>
+      </form>
+    </div>
+
+      <div class="col-lg-3 col-sm-6"></div>
+ 
+</div>
+
+
+{% endblock content %} 

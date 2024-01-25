@@ -1,0 +1,45 @@
+{% extends "emp/base.html" %}
+
+{% block content %}
+<h4 class="text-center">Add New  Employee page</h4>
+
+
+<div class = " row ">
+    <div class="col-lg-3 col-sm-6"></div>
+    <div class="col-lg-6 col-sm-6 card p-5 fw-semibold">
+    <form action ="/addemployee/" method = "POST">
+        {%csrf_token%}
+        <div class="mb-1">
+          <label for="exampleInputEmail1" class="form-label">Employee Id<span style="color: red">*</span></label>
+          <input type="number" class="form-control" id="exampleInput" placeholder ="Enter Id" name ="employeeid" required ="required">
+    
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Name <span style="color: red">*</span></label>
+          <input type="text" class="form-control" id="exampleInput2" placeholder = "Enter name" name ="name" required ="required">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Email 
+              <span style="color: red">*</span></label>
+            <input type="email" class="form-control" id="exampleInput2" placeholder ="Enter Email" name ="email" required ="required">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Address <span style="color: red">*</span></label>
+            <input type="text" class="form-control" id="exampleInput2" placeholder ="Enter Address" name ="address" required ="required">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Phone Number <span style="color: red">*</span></label>
+            <input type="number" class="form-control" id="exampleInput2" placeholder = "Enter Phone" name="phone" required ="required">
+          </div>
+    <div class ="container text-center mt-2">
+        <button type="submit" class="btn  btn-sm btn-outline-success ">Add Employee</button>
+        </div>
+      </form>
+    </div>
+
+      <div class="col-lg-3 col-sm-6"></div>
+ 
+</div>
+
+
+{% endblock content %} 
